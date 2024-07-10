@@ -1,7 +1,5 @@
 <?php
 
-require "router.php";
-
 function dd($value)
 {
     echo "<pre>";
