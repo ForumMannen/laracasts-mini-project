@@ -9,7 +9,7 @@
                 go back...
             </a>
         </p>
-        <p><?= $note['body'] ?></p>
+        <p><?= htmlspecialchars($note['body']) ?></p>
     </div>
 </main>
 <?php require('partials/footer.php') ?>
