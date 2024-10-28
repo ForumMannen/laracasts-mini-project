@@ -34,7 +34,8 @@
                                     <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                                 </button>
                             <?php else : ?>
-                                <a href="/register" class="text-white">Register</a>
+                                <a href="/register" class="rounded-md <?= urlIs('/register') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Register</a>
+                                <a href="/login" class="rounded-md <?= urlIs('/login') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Log In</a>
                             <?php endif; ?>
                             </button>
                         </div>
