@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+session_destroy();
+unset($_SESSION['user']);
 
 const BASE_PATH = __DIR__ . '/../';
 
