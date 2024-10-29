@@ -1,0 +1,10 @@
+{
+    "name": "lunde/laracasts-mini-project",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
