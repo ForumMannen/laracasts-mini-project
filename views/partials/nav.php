@@ -9,7 +9,10 @@
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="/" class="rounded-md <?= urlIs('/') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
                         <a href="/about" class="rounded-md <?= urlIs('/about') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">About</a>
-                        <a href="/notes" class="rounded-md <?= urlIs('/notes') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Notes</a>
+                        <?php if ($_SESSION['user'] ?? false) : ?>
+                            <a href="/notes"
+                                class="<?= urlIs('/notes') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Notes</a>
+                        <?php endif ?>
                         <a href="/contact" class="rounded-md <?= urlIs('/contact') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
                         <a href="/our-mission" class="rounded-md <?= urlIs('/our-mission') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Our Mission</a>
                     </div>
@@ -40,6 +43,16 @@
                             </button>
                         </div>
                     </div>
+
+                    <?php if ($_SESSION['user'] ?? false) : ?>
+                        <div class="ml-3">
+                            <form method="POST" action="/session">
+                                <input type="hidden" name="_method" value="DELETE" />
+
+                                <button class="text-white">Log Out</button>
+                            </form>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="-mr-2 flex md:hidden">
